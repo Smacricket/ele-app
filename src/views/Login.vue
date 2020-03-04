@@ -31,6 +31,7 @@
 
 <script>
 import InputGroup from "@/components/InputGroup";
+import { MessageBox } from "mint-ui";
 
 export default {
   name: "login",
@@ -51,12 +52,11 @@ export default {
   },
   methods: {
     handleLogin() {
-      //因为使用的是别人的验证码，所以可以一直用：382881
       // 清除错误信息
       this.errors = {};
       // 验证码校验
       this.$axios
-        .post("/other/posts/sms_back", {
+        .post("/api/posts/sms_back", {
           phone: this.phone,
           code: this.verifyCode
         })
@@ -76,15 +76,17 @@ export default {
         this.validateBtn();
         // 发送网络请求
         this.$axios
-          .post("/other/posts/sms_send", {
-            // sid: "70e9281073fe5e1546b7f657cae73897",
-            // token: "d1a5431e19d2005c3286794786111d79",
-            // appid: "099a1aedcf19400a9eb83d857eb7b845",
-            // templateid: "525851",
+          .post("/api/posts/sms_send", {
             phone: this.phone
           })
           .then(res => {
-            console.log(res);
+            // console.log(res);
+            if (res.data.code === "1002") {
+              MessageBox(
+                "提示",
+                `只能请求一次，您的验证码为${res.data.post.code}`
+              );
+            }
           })
           .catch(err => {
             console.log(err);

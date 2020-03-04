@@ -119,7 +119,7 @@ export default {
         )
         .then(res => {
           if (!this.$store.getters.userInfo) {
-            this.store.dispatch("setUserInfo", this.addressInfo);
+            this.$store.dispatch("setUserInfo", this.addressInfo);
           }
           this.$router.push("myAddress");
         })

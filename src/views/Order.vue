@@ -1,6 +1,12 @@
 <template>
   <div class="order">
-    <div class="order-card-body" v-for="(order, index) in orderlist" :key="index">
+    <div class="tip" v-if="orderlist.length==0">
+      <h2>
+        当前没有订单，请
+        <span @click="$router.push('/home')">前往下单</span>
+      </h2>
+    </div>
+    <div class="order-card-body" v-for="(order, index) in orderlist" :key="index" v-else>
       <div
         class="order-card-wrap"
         @click="$router.push({name: 'orderInfo',params: order})"
@@ -65,6 +71,11 @@ export default {
   box-sizing: border-box;
   margin-bottom: 2.666667vw;
 }
+
+.tip span {
+  color: #2395ff;
+}
+
 .order-card-body + .order-card-body {
   margin-top: 2.666667vw;
 }
