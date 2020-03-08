@@ -40,4 +40,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 2. Search.vue 点击 word 时筛选出来的商家信息只带汉堡的商家
 
-### http无法定位
+3. http无法定位
+【官方回复】
+Get ipLocation failed.
+ip定位失败，可能因为当前定位不在ip库中。
+Get geolocation failed.
+浏览器定位失败，JS API的定位是基于浏览器原生定位实现的，相关的性能较差，会存在定位失败的问题。
+您可以尝试升级为https后请求定位。
+
+### 线上demo
+http://114.116.245.197:5001/
+关于Get geolocation failed会失败问题域名备案通过之后才能升级https使用
