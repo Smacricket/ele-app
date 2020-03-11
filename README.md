@@ -49,5 +49,5 @@ Get geolocation failed.
 您可以尝试升级为https后请求定位。
 
 ### 线上demo
-http://114.116.245.197:5001/
-关于Get geolocation failed会失败问题域名备案通过之后才能升级https使用
+https://www.smacricketcvm.com
+域名安装了ssl证书应该定位没什么问题了
