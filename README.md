@@ -49,5 +49,5 @@ Get geolocation failed.
 您可以尝试升级为https后请求定位。
 
 ### 线上demo
-https://www.smacricketcvm.com
+https://elec.smacricketcvm.com
 
