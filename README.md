@@ -51,3 +51,5 @@ Get geolocation failed.
 ### 线上demo
 https://elec.smacricketcvm.com
 
+### 更新了短信
+原来短信一直过期了，没有发现，已购买新手机套餐
